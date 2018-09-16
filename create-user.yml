@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  become: yes
+  vars:
+    password: nope
+
+  tasks:
+    - user: name=lorebot password={{password}}
