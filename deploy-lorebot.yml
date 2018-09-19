@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: lorebot
+  become: yes
+  # TODO: Pull latest lorebot code
+  # TODO: Build lorebot
+  # TODO: How to handle config? Upload from local?
+  # TODO: Ensure systemd module exists
+  # TODO: Restart systemd module
+  # TODO: Alert slack that a new version of lorebot is in production
