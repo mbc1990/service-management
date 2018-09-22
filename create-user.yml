@@ -6,7 +6,8 @@
     password: nope
 
   tasks:
-    - user: name=lorebot
+    - user: name=lorebot state=present groups=primary-group groups="sudo"
+    - sudo: yes
     - name: Set lorebot's authorized key
       authorized_key:
         user: lorebot

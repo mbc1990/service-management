@@ -8,3 +8,17 @@
       version: master
       dest: /home/lorebot/lorebot
       accept_hostkey: true
+  - name: Get psql dep
+    environment:
+      GOPATH: /home/lorebot/go
+    command: /usr/local/go/bin/go get github.com/lib/pq
+  - name: Get slack dep
+    environment:
+      GOPATH: /home/lorebot/go
+    command: /usr/local/go/bin/go get github.com/nlopes/slack
+  - name: Compile lorebot
+    environment:
+      GOPATH: /home/lorebot/go
+    command: /usr/local/go/bin/go build
+    args:
+      chdir: /home/lorebot/lorebot/
