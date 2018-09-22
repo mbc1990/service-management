@@ -2,10 +2,12 @@
 - hosts: all
   remote_user: ubuntu
   become: yes
+  roles:
+  - role: sansible.golang  # install go
+    sansible_golang_workspace_user: lorebot
   tasks:
-  - name: Install apt stuff
-    apt:
-      name: htop
-      name: git
- # TODO: Install Go
- # TODO: Install Jenkins?
+  - name: Install list of packages
+    apt: name={{item}} state=installed
+    with_items:
+         - git
+         - htop
