@@ -5,6 +5,10 @@
   vars:
     password: nope
 
-  # TODO: Install user's public key
   tasks:
-    - user: name=lorebot password={{password}}
+    - user: name=lorebot
+    - name: Set lorebot's authorized key
+      authorized_key:
+        user: lorebot
+        state: present
+        key: "{{ lookup('file', '/home/malcolm/Projects/service-management/lorebot.pub') }}"

@@ -1,17 +1,12 @@
 ---
 - hosts: all
-  remote_user: ubuntu  # TODO: Should be lorebot user, which needs a keypair
-  become: yes
-  # roles:
-  # - role: sansible.golang  # install go
-  # sansible_golang_workspace_user: lorebot
-  # Example git checkout from Ansible Playbooks
+  remote_user: lorebot
   tasks:
   - name: Clone repo
     git:
-      repo: 'git@github.com:mbc1990/lore.git'
+      repo: 'git@github.com:mbc1990/lore.git'  # TODO: Key needs to be added to github
       version: master
-      dest: /home/ubuntu/  # TODO: Should be lorebot user
+      dest: /home/lorebot/
 
   # TODO: Build lorebot
   # TODO: How to handle config? Upload from local?

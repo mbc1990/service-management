@@ -3,7 +3,7 @@
   remote_user: ubuntu
   become: yes
   roles:
-  - role: sansible.golang  # install go
+  - role: sansible.golang  # install go for lorebot
     sansible_golang_workspace_user: lorebot
   tasks:
   - name: Install list of packages
