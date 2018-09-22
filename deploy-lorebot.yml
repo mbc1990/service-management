@@ -4,12 +4,7 @@
   tasks:
   - name: Clone repo
     git:
-      repo: 'git@github.com:mbc1990/lore.git'  # TODO: Key needs to be added to github
+      repo: 'git@github.com:mbc1990/lore.git'
       version: master
-      dest: /home/lorebot/
-
-  # TODO: Build lorebot
-  # TODO: How to handle config? Upload from local?
-  # TODO: Ensure systemd module exists
-  # TODO: Restart systemd module
-  # TODO: Alert slack that a new version of lorebot is in production
+      dest: /home/lorebot/lorebot
+      accept_hostkey: true
